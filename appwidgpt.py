@@ -16,7 +16,7 @@ def initialize_gpt_session():
 
 def load_gpt3_model():
     st.title(f":rainbow[This is a GPT-3 Bot]🤖")
-    openai.api_key ="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"
+    openai.api_key =st.secrets["OPENAI_API_KEY"]
     if "openai_model" not in st.session_state:
         st.session_state["openai_model"] = "gpt-3.5-turbo"
 
@@ -62,7 +62,7 @@ def load_gpt3_model():
             
 def load_gpt3_models():
     st.title(f":rainbow[This is a GPT-3 Bot]🤖")
-    openai.api_key = "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"
+    openai.api_key = st.secrets["OPENAI_API_KEY"]
     if "openai_model" not in st.session_state:
         st.session_state["openai_model"] = "gpt-3.5-turbo"
 
