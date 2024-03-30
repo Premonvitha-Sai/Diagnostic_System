@@ -439,25 +439,24 @@ def chatbot_page():
 
 # Logout button implementation
 # Logout button implementation
+# Logout and conditional Ask our Bot button implementation
 if "logged_in" in st.session_state and st.session_state.logged_in:
-    col1,_,col2 = st.columns([1,3,1])
+    col1, _, col2 = st.columns([1, 3, 1])
     with col1:
         if st.button("Logout"):
             # Logout logic
             initialize_gpt_session()
             st.session_state.logged_in = False
-            
-
-        
             # Cleanup
-            st.session_state.pop('ask_bot', None)  # Remove the bot interaction flag if it exists
+            st.session_state.pop('ask_bot', None)  # Ensure 'ask_bot' flag is cleared on logout
             st.experimental_rerun()
-    with col2:
-        if st.button("Ask our Bot 🤖"):
-            # Direct the user to interact with the bot
-            st.session_state.ask_bot = True
-            st.experimental_rerun()
-
+    # Only show the Ask our Bot button if 'ask_bot' is not set to True in the session state
+    if "ask_bot" not in st.session_state or not st.session_state.ask_bot:
+        with col2:
+            if st.button("Ask our Bot 🤖"):
+                # Direct the user to interact with the bot
+                st.session_state.ask_bot = True
+                st.experimental_rerun()
 
 
 # Check if user is logged in
