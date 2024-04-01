@@ -10,6 +10,12 @@ import openai
 import base64
 
 
+st.set_page_config(
+        page_title="🤖AI & Sleep😴",
+        page_icon="👩‍⚕️",  # You can use an emoji or specify the URL for an image
+       # layout="wide",
+    )
+
 hide_st_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -156,6 +162,7 @@ def authenticate_user(username, password):
         return False
 
 def home_page():
+    
     st.title(":rainbow[Diagnostic System for Sleep Disorder]")
     st.write("""
         This system aims to diagnose sleep disorders using machine learning models. 
