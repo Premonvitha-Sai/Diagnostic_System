@@ -163,7 +163,7 @@ def authenticate_user(username, password):
 
 def home_page():
     
-    st.title(":rainbow[Diagnostic System for Sleep Disorder]")
+    st.title(":rainbow[Diagnostic System for Sleep Disorder]😴")
     st.write("""
         This system aims to diagnose sleep disorders using machine learning models. 
         Upload your data and get insights into your sleep health!
