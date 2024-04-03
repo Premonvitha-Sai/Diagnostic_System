@@ -10,20 +10,34 @@ import openai
 import base64
 
 
+
+
+
 st.set_page_config(
         page_title="🤖AI & Sleep😴",
         page_icon="👩‍⚕️",  # You can use an emoji or specify the URL for an image
        # layout="wide",
     )
 
-hide_st_style = """
+hide_github_icon_style = """
             <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
+            /* Hide the GitHub icon by targeting an anchor element with an href attribute containing 'github' */
+            header a[href*="github"] {display: none !important;}
             </style>
             """
-st.markdown(hide_st_style, unsafe_allow_html=True)
+st.markdown(hide_github_icon_style, unsafe_allow_html=True)
+
+
+
+# hide_st_style = """
+#             <style>
+#             #MainMenu {visibility: hidden;}
+#             footer {visibility: hidden;}
+#             header {visibility: hidden;}
+#             </style>
+#             """
+# st.markdown(hide_st_style, unsafe_allow_html=True)
+
 def initialize_gpt_session():
     """Initializes or resets the GPT model in the session state."""
     st.session_state["openai_model"] = "gpt-3.5-turbo"
