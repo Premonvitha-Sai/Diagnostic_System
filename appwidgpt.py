@@ -354,8 +354,8 @@ def result_page():
     issue_prob = st.session_state.result['issue_prob']
     is_male = st.session_state.result['is_male']
     issue_prediction_text = st.session_state.result['issue_prediction_text']
-
-    st.write(f"### Probability of having a sleep issue: {issue_prob} %")
+    formatted_prob = "{:.2f}%".format(issue_prob)
+    st.write(f"### Probability of having a sleep issue: {formatted_prob}")
     fig = plot_filled_gender(is_male, np.round(issue_prob, 2))
     st.pyplot(fig, use_container_width=False)
     
