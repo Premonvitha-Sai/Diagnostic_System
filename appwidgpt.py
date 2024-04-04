@@ -173,7 +173,7 @@ def home_page():
     st.title(":rainbow[Diagnostic System for Sleep Disorder]😴")
     st.write("""
         This system aims to diagnose sleep disorders using machine learning models. 
-        Upload your data and get insights into your sleep health!
+        Enter your data and get insights into your sleep health!
     """)
 
    
@@ -424,7 +424,7 @@ def therapy_page():
 
     elif issue_prediction_text == "Insomnia":
         if issue_prob >= 70:
-            st.error(f"**:orange[It's crucial for youto consult with a healthcare provider for a comprehensive treatment plan tailored to your specific needs]**, :violet[{st.session_state.username}]🥺")
+            st.error(f"**:orange[It's crucial for you to consult with a healthcare provider for a comprehensive treatment plan tailored to your specific needs]**, :violet[{st.session_state.username}]🥺")
             st.markdown(f"""
                 ##### High Risk Level Remedies for :red[{issue_prediction_text}]
                 1. **Cognitive Behavioral Therapy (CBT) for Insomnia:** This is a structured program that helps you identify and replace thoughts and behaviors that cause or worsen sleep problems with habits that promote sound sleep.
